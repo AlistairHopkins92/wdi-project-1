@@ -1,3 +1,65 @@
-body{
-  background: blue;
+ul {
+  height: 589px;
+  width: 589px;
+  border: 1px solid white;
+  list-style: none;
+  padding: 0;
+}
+.shortrow {
+  height: 18px;
+  width: 587px;
+  border: 1px solid white;
+  list-style: none;
+  padding: 0;
+}
+
+.tallrow {
+  height: 168px;
+  width: 587px;
+  border: 1px solid white;
+  list-style: none;
+  padding: 0;
+
+}
+.shortrow .narrowcolumn {
+  height: 16px;
+  width: 18px;
+  border: 1px solid white;
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+  float: left;
+  background: black;
+}
+
+
+.shortrow .widecolumn {
+  height: 16px;
+  width: 167px;
+  border: 1px solid white;
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+.tallrow .narrowcolumn {
+  height: 167px;
+  width: 18px;
+  border: 1px solid white;
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+
+.tallrow .widecolumn {
+  height: 167px;
+  width: 167px;
+  border: 1px solid white;
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  line-height: 167px;
 }
