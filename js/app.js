@@ -10,10 +10,12 @@ var moveCount       = 0;
 
 function playerTurn(moveCount){
     if(moveCount%2 === 0){
+        return("player1")
         console.log("player1")
     }
     else{
-        console.log("player2")
+        return("player2")
+        console.log("player1")
     }
 
 }
@@ -44,17 +46,26 @@ function fillLine(){
     // console.log("new value of box" + boxVertSelid + '= ' + newvalueId);
 
     if( newvalueId === 4){
-
-            console.log("BOX " + boxVertSelid + " HAS BEEN FILLED")
+            console.log("BOX " + boxVertSelid + " HAS BEEN FILLED BY " + playerTurn(moveCount))
+            if(playerTurn(moveCount) === "player1"){
+               document.body.style.backgroundColor = "red"; 
+            }
+            else{
+                document.body.style.backgroundColor = "blue";
+            }
         }
         else if( newvalueVal === 4){
-
-            console.log("BOX "+ boxVertSelval +" HAS BEEN FILLED")
+            console.log("BOX " + boxVertSelval + " HAS BEEN FILLED BY " + playerTurn(moveCount))
+            if(playerTurn(moveCount) === "player1"){
+               document.body.style.backgroundColor = "red"; 
+            }
+            else{
+                document.body.style.backgroundColor = "blue";
+            }
         }
         else{
             moveCount+=1;
-            console.log(moveCount);
-            playerTurn(moveCount);
+            console.log("movecount: " + moveCount + " player turn: " + playerTurn(moveCount));
         }
         
 
@@ -84,15 +95,27 @@ function fillLine(){
     // console.log("new value of box" + boxHorSelid + '= ' + newvalueId);
 
     if( newvalueVal === 4){
-        console.log("BOX HAS BEEN FILLED")
+        console.log("BOX " + boxHorSelval +" HAS BEEN FILLED BY " + playerTurn(moveCount))
+        if(playerTurn(moveCount) === "player1"){
+            document.body.style.backgroundColor = "red";
+        }
+        else{
+            document.body.style.backgroundColor = "blue";
+        }
+
     }
     else if( newvalueId === 4){
-        console.log("BOX HAS BEEN FILLED")
+        console.log("BOX " + boxHorSelid +" HAS BEEN FILLED BY " + playerTurn(moveCount))
+        if(playerTurn(moveCount) === "player1"){
+           document.body.style.backgroundColor = "red"; 
+        }
+        else{
+            document.body.style.backgroundColor = "blue";
+        }
     }
     else{
         moveCount+=1;
-        console.log(moveCount);
-        playerTurn(moveCount); 
+        console.log("movecount: " + moveCount + " player turn: " + playerTurn(moveCount));
     }
 });
 
