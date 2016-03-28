@@ -4,6 +4,7 @@ ul {
   border: 1px solid white;
   list-style: none;
   padding: 0;
+  margin: 0 auto;
 }
 .shortrow {
   height: 18px;
@@ -30,6 +31,7 @@ ul {
   display: inline-block;
   float: left;
   background: black;
+  border-radius: 8px;
 }
 
 
@@ -41,7 +43,9 @@ ul {
   padding: 0;
   display: inline-block;
   float: left;
+  border-radius: 8px;
 }
+
 .tallrow .narrowcolumn {
   height: 167px;
   width: 18px;
@@ -50,6 +54,7 @@ ul {
   padding: 0;
   display: inline-block;
   float: left;
+  border-radius: 8px;
 }
 
 .tallrow .widecolumn {
@@ -62,4 +67,9 @@ ul {
   float: left;
   text-align: center;
   line-height: 167px;
+  border-radius: 8px;
+}
+
+#box1 {
+  background-color: white;
 }

@@ -2,11 +2,15 @@ $(function(){
   fillLine()
 });
 
-
 var boxes           = [5,0,0,0,0,0,0,0,0,0];
 var playerColour1   =  "red";
-var playerColour2   =   "blue";
+var playerColour2   =  "blue";
 var moveCount       = 0;
+
+var boxesArray = [0,"box1","box2","box3","box4","box5","box6","box7","box8","box9"]
+
+
+
 
 function playerTurn(moveCount){
     if(moveCount%2 === 0){
@@ -23,7 +27,7 @@ function playerTurn(moveCount){
 function fillLine(){
 
   $('ul .tallrow .narrowcolumn').one("click", function() {
-
+    
     $(this).css("background", "black");
     // console.log("boxes to be filled");
 
@@ -48,19 +52,27 @@ function fillLine(){
     if( newvalueId === 4){
             console.log("BOX " + boxVertSelid + " HAS BEEN FILLED BY " + playerTurn(moveCount))
             if(playerTurn(moveCount) === "player1"){
-               document.body.style.backgroundColor = "red"; 
+                console.log("h"+boxVertSelid);
+                //document.body.style.backgroundColor = playerColour1;  
+                $(boxesArray[1].id).css("background", playerColour1);
             }
             else{
-                document.body.style.backgroundColor = "blue";
+                console.log("h"+boxVertSelid);
+                //document.body.style.backgroundColor = playerColour2;
+                $(boxesArray[1].id).css("background", playerColour2);
             }
         }
         else if( newvalueVal === 4){
             console.log("BOX " + boxVertSelval + " HAS BEEN FILLED BY " + playerTurn(moveCount))
             if(playerTurn(moveCount) === "player1"){
-               document.body.style.backgroundColor = "red"; 
+                console.log("h"+boxVertSelval);
+                //document.body.style.backgroundColor = playerColour1; 
+                // $((boxesArray[1]).id).css("background", playerColour1);
             }
             else{
-                document.body.style.backgroundColor = "blue";
+                console.log("h"+boxVertSelval);
+                //document.body.style.backgroundColor = playerColour2;
+                // $((boxesArray[1]).id).css("background", playerColour2);
             }
         }
         else{
@@ -97,20 +109,35 @@ function fillLine(){
     if( newvalueVal === 4){
         console.log("BOX " + boxHorSelval +" HAS BEEN FILLED BY " + playerTurn(moveCount))
         if(playerTurn(moveCount) === "player1"){
-            document.body.style.backgroundColor = "red";
+            console.log("h"+boxHorSelval);
+            //document.body.style.backgroundColor = playerColour1;
+            $(boxesArray[1].id).css("background", playerColour1);
         }
         else{
-            document.body.style.backgroundColor = "blue";
+            console.log("h"+boxHorSelval);
+            //document.body.style.backgroundColor = playerColour2;
+            // $(boxesArray[1].id).css("background", playerColour2);
         }
 
     }
     else if( newvalueId === 4){
         console.log("BOX " + boxHorSelid +" HAS BEEN FILLED BY " + playerTurn(moveCount))
         if(playerTurn(moveCount) === "player1"){
-           document.body.style.backgroundColor = "red"; 
+            console.log("H" + boxHorSelid);
+
+            boxHorSelid = parseInt(boxHorSelid)
+            console.log("This is boxHorSelid: " + boxHorSelid) 
+
+            var boxClicked = $('#box'+boxHorSelid);
+
+
+            boxClicked.css("backgroundColor", playerColour1);
+            //$(boxesArray[1].id).css("background", playerColour1);
         }
         else{
-            document.body.style.backgroundColor = "blue";
+            console.log("h"+boxHorSelid);
+            //document.body.style.backgroundColor = playerColour2;
+            // $("boxesArray[1]".id).css("background", playerColour2);
         }
     }
     else{
@@ -118,8 +145,6 @@ function fillLine(){
         console.log("movecount: " + moveCount + " player turn: " + playerTurn(moveCount));
     }
 });
-
-
 
 
 }
