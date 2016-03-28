@@ -9,7 +9,6 @@ var moveCount       =   0;
 var player1Score    =   0;
 var player2Score    =   0;
 
-
 function playerTurn(moveCount){
     if(moveCount%2 === 0){
         return("player1")
@@ -21,16 +20,17 @@ function playerTurn(moveCount){
     }
 }
 
+function endGame(moveCount){
+    if(moveCount>58){
+        alert("game over")
+    }
+}
+
 function fillLine(){
 
   $('ul .tallrow .narrowcolumn').one("click", function() {
 
-    // $(this).animate({backgroundColor: "#000"}, 'slow');
-    // $(this).css("background", "black").fadeIn();
-    // $(this).addClass("animated fadeIn");
     $(this).addClass('backgroundAnimated');
-
-
 
     var boxVertSelval   = ($(this).val());
 
@@ -42,7 +42,7 @@ function fillLine(){
 
     var totalScore1   = document.querySelector(".totalScore1");
     var totalScore2   = document.querySelector(".totalScore2");
-
+    var whosGo        = document.querySelector(".turn")
     if((newvalueId=== 4)&&(newvalueVal=== 4)){
         console.log("BOX " + boxVertSelid + " HAS BEEN FILLED BY " + playerTurn(moveCount))
         if(playerTurn(moveCount) === "player1"){
@@ -62,6 +62,8 @@ function fillLine(){
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
         else{
             boxVertSelid = parseInt(boxVertSelid)
@@ -79,6 +81,8 @@ function fillLine(){
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
     }
 
@@ -91,9 +95,10 @@ function fillLine(){
 
             boxClicked.css("backgroundColor", playerColour1);
             player1Score+=1;
-            console.log("player1 score: "+player1Score+" player2 score: "+player2Score);
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
         else{
             boxVertSelid = parseInt(boxVertSelid)
@@ -105,6 +110,8 @@ function fillLine(){
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
     }
     else if(newvalueVal === 4){
@@ -119,7 +126,8 @@ function fillLine(){
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
-
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
         else{
             boxVertSelval = parseInt(boxVertSelval)
@@ -131,11 +139,13 @@ function fillLine(){
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
     }
     else{
         moveCount+=1;
-        console.log("player1 score: "+player1Score+" player2 score: "+player2Score);
+        whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
     }
 
 });
@@ -154,7 +164,7 @@ function fillLine(){
     var totalScore1   = document.querySelector(".totalScore1");
     var totalScore2   = document.querySelector(".totalScore2");
 
-
+    var whosGo        = document.querySelector(".turn")
 
     if((newvalueId=== 4)&&(newvalueVal=== 4)){
         console.log("BOX " + boxHorSelid + " HAS BEEN FILLED BY " + playerTurn(moveCount))
@@ -172,10 +182,11 @@ function fillLine(){
 
             boxClicked2.css("backgroundColor", playerColour1);
             player1Score+=2
-            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
         else{
             boxHorSelid = parseInt(boxHorSelid)
@@ -190,11 +201,11 @@ function fillLine(){
 
             boxClicked2.css("backgroundColor", playerColour2);
             player2Score+=2
-            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
-
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
     }
 
@@ -208,10 +219,11 @@ function fillLine(){
 
             boxClicked.css("backgroundColor", playerColour1);
             player1Score+=1
-            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
         else{
             boxHorSelval = parseInt(boxHorSelval)
@@ -220,10 +232,11 @@ function fillLine(){
 
             boxClicked.css("backgroundColor", playerColour2);
             player2Score+=1
-            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
 
     }
@@ -236,10 +249,11 @@ function fillLine(){
 
             boxClicked.css("backgroundColor", playerColour1);
             player1Score+=1
-            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
         else{
 
@@ -249,16 +263,20 @@ function fillLine(){
 
             boxClicked.css("backgroundColor", playerColour2);
             player2Score+=1
-            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
 
             totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
+            whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
+            endGame(moveCount);
         }
     }
     else{
         moveCount+=1;
+        whosGo.innerHTML      = (playerTurn(moveCount)+"\'s turn");
         totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
         totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
     }
+
+
 });
 }

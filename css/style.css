@@ -2,6 +2,7 @@ header{
   font-size: 50px;
   text-align: center;
   padding: 20px;
+  font-family: "daft";
 }
 h2{
   font-size: 30px;
@@ -11,13 +12,43 @@ h2{
 span{
   padding:20px;
 }
+@font-face {
+  font-family: 'daft';
+  src: url('../fonts/Daft_Font.eot');
+  src: local('☺'), url('../fonts/Daft_Font.woff') format('woff'), url('../fonts/Daft_Font.ttf') format('truetype'), url('../fonts/Daft_Font.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 ul#main {
   height: 444px;
   max-width: 1005px;
-  border: 1px solid white;
+  border: 1px solid transparent;
   list-style: none;
   padding: 0;
   margin: 0 auto;
+}
+
+.totalScore1{
+  color:red;
+  margin: 30px;
+  font-family: "daft";
+}
+
+.totalScore2{
+  color:blue;
+  margin: 30px;
+  font-family: "daft";
+}
+
+.turn{
+  color: purple;
+  margin: 30px;
+  font-family: "daft";
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
 }
 
 ul > ul {
@@ -26,7 +57,7 @@ ul > ul {
 .shortrow {
   height: 18px;
   max-width: 1003px;
-  border: 1px solid white;
+  border: 1px solid transparent;
   list-style: none;
   padding: 0;
 }
@@ -34,7 +65,7 @@ ul > ul {
 .tallrow {
   height: 88px;
   max-width: 1003px;  
-  border: 1px solid white;
+  border: 1px solid transparent;
   list-style: none;
   padding: 0;
 
@@ -42,60 +73,57 @@ ul > ul {
 .shortrow .narrowcolumn {
   height: 88%;
   width: 1.785%;
-  border: 1px solid white;
+  border: 1px solid black;
   list-style: none;
   padding: 0;
   display: inline-block;
   background: black;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 
 .shortrow .widecolumn {
   height: 88%;
   width: 7.673%;
-  border: 1px solid white;
+  border: 7px solid white;
   list-style: none;
   padding: 0;
   display: inline-block;
-  border-radius: 8px;
+  box-sizing: border-box;
+
 }
 
 .tallrow .narrowcolumn {
   height: 100%;
   width: 1.785%;
-  border: 1px solid white;
+  border: 8px solid white;
   list-style: none;
   padding: 0;
   display: inline-block;
-/*  float: left;
-*/  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .tallrow .widecolumn {
   height: 100%;
   width: 7.673%;
-  border: 1px solid white;
+  border: 1px solid transparent;
   list-style: none;
-  padding: 0;
+  padding: 0px;
   display: inline-block;
-/*  float: left;
-*/  text-align: center;
+  text-align: center;
   line-height: 87px;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
-#box1 {
-  background-color: white;
-}
+
 
 @-webkit-keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
-  100% { background-color: #000; }
+  100% { background: #000; }
 }
 @keyframes fadeIt {
   0%   { background-color: #FFFFFF; }
-  100% { background-color: #000; }
+  100% { background: #000; }
 }
 
 .backgroundAnimated{    
