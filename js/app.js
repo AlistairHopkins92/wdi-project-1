@@ -6,6 +6,9 @@ var boxes           = [5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 var playerColour1   =  "red";
 var playerColour2   =  "blue";
 var moveCount       =   0;
+var player1Score    =   0;
+var player2Score    =   0;
+
 
 function playerTurn(moveCount){
     if(moveCount%2 === 0){
@@ -24,110 +27,112 @@ function fillLine(){
 
     $(this).css("background", "black");
 
-    var boxVertSelval = ($(this).val());
-
-    var newvalueVal = (boxes[boxVertSelval] += 1)
-
-    var boxVertSelid = ($(this.id).selector);
-
-    var newvalueId = (boxes[boxVertSelid] += 1)
 
 
+    var boxVertSelval   = ($(this).val());
+
+    var newvalueVal     = (boxes[boxVertSelval] += 1)
+
+    var boxVertSelid    = ($(this.id).selector);
+
+    var newvalueId      = (boxes[boxVertSelid] += 1)
+    
+    var totalScore1   = document.querySelector(".totalScore1");
+    var totalScore2   = document.querySelector(".totalScore2");
 
     if((newvalueId=== 4)&&(newvalueVal=== 4)){
         console.log("BOX " + boxVertSelid + " HAS BEEN FILLED BY " + playerTurn(moveCount))
         if(playerTurn(moveCount) === "player1"){
-            console.log("h"+boxVertSelid);
 
             boxVertSelid = parseInt(boxVertSelid)
-            console.log("This is boxHorSelid: " + boxVertSelid) 
 
             var boxClicked1 = $('#box'+boxVertSelid)
 
             boxClicked1.css("backgroundColor", playerColour1);
-            console.log("h"+boxVertSelval);
 
             boxVertSelval = parseInt(boxVertSelval)
-            console.log("This is boxHorSelid: " + boxVertSelval) 
 
             var boxClicked2 = $('#box'+boxVertSelval)
 
             boxClicked2.css("backgroundColor", playerColour1);
+            player1Score+=2
 
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
         else{
-            console.log("h"+boxVertSelid);
-
             boxVertSelid = parseInt(boxVertSelid)
-            console.log("This is boxHorSelid: " + boxVertSelid) 
 
             var boxClicked1 = $('#box'+boxVertSelid)
 
             boxClicked1.css("backgroundColor", playerColour2);
 
-            console.log("h"+boxVertSelval);
-
             boxVertSelval = parseInt(boxVertSelval)
-            console.log("This is boxHorSelid: " + boxVertSelval) 
 
             var boxClicked2 = $('#box'+boxVertSelval)
 
             boxClicked2.css("backgroundColor", playerColour2);
+            player2Score+=2;
 
-
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
     }
 
     else if(newvalueId === 4){
-        // console.log("BOX " + boxVertSelid + " HAS BEEN FILLED BY " + playerTurn(moveCount))
         if(playerTurn(moveCount) === "player1"){
-            console.log("h"+boxVertSelid);
 
             boxVertSelid = parseInt(boxVertSelid)
-            console.log("This is boxHorSelid: " + boxVertSelid) 
 
             var boxClicked = $('#box'+boxVertSelid)
 
             boxClicked.css("backgroundColor", playerColour1);
+            player1Score+=1;
+            console.log("player1 score: "+player1Score+" player2 score: "+player2Score);
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
         else{
-            console.log("h"+boxVertSelid);
-
             boxVertSelid = parseInt(boxVertSelid)
-            console.log("This is boxHorSelid: " + boxVertSelid) 
 
             var boxClicked = $('#box'+boxVertSelid)
 
             boxClicked.css("backgroundColor", playerColour2);
+            player2Score+=1
+
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
     }
     else if(newvalueVal === 4){
-        // console.log("BOX " + boxVertSelval + " HAS BEEN FILLED BY " + playerTurn(moveCount))
         if(playerTurn(moveCount) === "player1"){
-            console.log("h"+boxVertSelval);
 
             boxVertSelval = parseInt(boxVertSelval)
-            console.log("This is boxHorSelid: " + boxVertSelval) 
 
             var boxClicked = $('#box'+boxVertSelval)
 
             boxClicked.css("backgroundColor", playerColour1);
+            player1Score+=1
+
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
 
         }
         else{
-            console.log("h"+boxVertSelval);
-
             boxVertSelval = parseInt(boxVertSelval)
-            console.log("This is boxHorSelid: " + boxVertSelval) 
 
             var boxClicked = $('#box'+boxVertSelval)
 
             boxClicked.css("backgroundColor", playerColour2);
+            player2Score+=1;
+
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
     }
     else{
         moveCount+=1;
-        console.log("movecount: " + moveCount + " player turn: " + playerTurn(moveCount));
+        console.log("player1 score: "+player1Score+" player2 score: "+player2Score);
     }
 
 });
@@ -143,102 +148,114 @@ function fillLine(){
 
     var newvalueId = (boxes[boxHorSelid] += 1)
 
+    var totalScore1   = document.querySelector(".totalScore1");
+    var totalScore2   = document.querySelector(".totalScore2");
+
+
 
     if((newvalueId=== 4)&&(newvalueVal=== 4)){
         console.log("BOX " + boxHorSelid + " HAS BEEN FILLED BY " + playerTurn(moveCount))
         if(playerTurn(moveCount) === "player1"){
-            console.log("h"+boxHorSelid);
 
             boxHorSelid = parseInt(boxHorSelid)
-            console.log("This is boxHorSelid: " + boxHorSelid) 
 
             var boxClicked1 = $('#box'+boxHorSelid)
 
             boxClicked1.css("backgroundColor", playerColour1);
-            console.log("h"+boxHorSelval);
 
             boxHorSelval = parseInt(boxHorSelval)
-            console.log("This is boxHorSelid: " + boxHorSelval) 
 
             var boxClicked2 = $('#box'+boxHorSelval)
 
             boxClicked2.css("backgroundColor", playerColour1);
+            player1Score+=2
+            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
 
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
         else{
-            console.log("h"+boxHorSelid);
-
             boxHorSelid = parseInt(boxHorSelid)
-            console.log("This is boxHorSelid: " + boxHorSelid) 
 
             var boxClicked1 = $('#box'+boxHorSelid)
 
             boxClicked1.css("backgroundColor", playerColour2);
 
-            console.log("h"+boxHorSelval);
-
             boxHorSelval = parseInt(boxHorSelval)
-            console.log("This is boxHorSelid: " + boxHorSelval) 
 
             var boxClicked2 = $('#box'+boxHorSelval)
 
             boxClicked2.css("backgroundColor", playerColour2);
+            player2Score+=2
+            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
 
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
 
         }
     }
 
 
     else if( newvalueVal === 4){
-        // console.log("BOX " + boxHorSelval +" HAS BEEN FILLED BY " + playerTurn(moveCount))
         if(playerTurn(moveCount) === "player1"){
-            console.log("h"+boxHorSelval);
 
             boxHorSelval = parseInt(boxHorSelval)
-            console.log("This is boxHorSelid: " + boxHorSelval) 
 
             var boxClicked = $('#box'+boxHorSelval);
 
             boxClicked.css("backgroundColor", playerColour1);
+            player1Score+=1
+            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
+
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
         else{
-            console.log("h"+boxHorSelval);
-
             boxHorSelval = parseInt(boxHorSelval)
-            console.log("This is boxHorSelid: " + boxHorSelval) 
 
             var boxClicked = $('#box'+boxHorSelval);
 
             boxClicked.css("backgroundColor", playerColour2);
+            player2Score+=1
+            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
+
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
 
     }
     else if( newvalueId === 4){
-        // console.log("BOX " + boxHorSelid +" HAS BEEN FILLED BY " + playerTurn(moveCount))
         if(playerTurn(moveCount) === "player1"){
-            console.log("H" + boxHorSelid);
 
             boxHorSelid = parseInt(boxHorSelid)
-            console.log("This is boxHorSelid: " + boxHorSelid) 
 
             var boxClicked = $('#box'+boxHorSelid);
 
             boxClicked.css("backgroundColor", playerColour1);
+            player1Score+=1
+            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
+
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
         else{
-            console.log("h"+boxHorSelid);
 
             boxHorSelid = parseInt(boxHorSelid)
-            console.log("This is boxHorSelid: " + boxHorSelid) 
 
             var boxClicked = $('#box'+boxHorSelid)
 
             boxClicked.css("backgroundColor", playerColour2);
+            player2Score+=1
+            console.log("player1 score: "+player1Score+" player2 score: "+player2Score)
+
+            totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+            totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
         }
     }
     else{
         moveCount+=1;
-        console.log("movecount: " + moveCount + " player turn: " + playerTurn(moveCount));
+        totalScore1.innerHTML = ("Player 1 Score: "+player1Score);
+        totalScore2.innerHTML = ("Player 2 Score: "+player2Score);
     }
 });
 }
