@@ -1,6 +1,16 @@
+header{
+  font-size: 50px;
+  text-align: center;
+  padding: 20px;
+}
+h2{
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
 ul {
-  height: 589px;
-  width: 589px;
+  height: 444px;
+  width: 1005px;
   border: 1px solid white;
   list-style: none;
   padding: 0;
@@ -8,15 +18,15 @@ ul {
 }
 .shortrow {
   height: 18px;
-  width: 587px;
+  width: 1003px;
   border: 1px solid white;
   list-style: none;
   padding: 0;
 }
 
 .tallrow {
-  height: 168px;
-  width: 587px;
+  height: 88px;
+  width: 1003px;
   border: 1px solid white;
   list-style: none;
   padding: 0;
@@ -37,7 +47,7 @@ ul {
 
 .shortrow .widecolumn {
   height: 16px;
-  width: 167px;
+  width: 87px;
   border: 1px solid white;
   list-style: none;
   padding: 0;
@@ -47,7 +57,7 @@ ul {
 }
 
 .tallrow .narrowcolumn {
-  height: 167px;
+  height: 87px;
   width: 18px;
   border: 1px solid white;
   list-style: none;
@@ -58,15 +68,15 @@ ul {
 }
 
 .tallrow .widecolumn {
-  height: 167px;
-  width: 167px;
+  height: 87px;
+  width: 87px;
   border: 1px solid white;
   list-style: none;
   padding: 0;
   display: inline-block;
   float: left;
   text-align: center;
-  line-height: 167px;
+  line-height: 87px;
   border-radius: 8px;
 }
 
