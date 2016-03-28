@@ -11,17 +11,21 @@ h2{
 span{
   padding:20px;
 }
-ul {
+ul#main {
   height: 444px;
-  width: 1005px;
+  max-width: 1005px;
   border: 1px solid white;
   list-style: none;
   padding: 0;
   margin: 0 auto;
 }
+
+ul > ul {
+  vertical-align: top;
+}
 .shortrow {
   height: 18px;
-  width: 1003px;
+  max-width: 1003px;
   border: 1px solid white;
   list-style: none;
   padding: 0;
@@ -29,56 +33,54 @@ ul {
 
 .tallrow {
   height: 88px;
-  width: 1003px;
+  max-width: 1003px;  
   border: 1px solid white;
   list-style: none;
   padding: 0;
 
 }
 .shortrow .narrowcolumn {
-  height: 16px;
-  width: 18px;
+  height: 88%;
+  width: 1.785%;
   border: 1px solid white;
   list-style: none;
   padding: 0;
   display: inline-block;
-  float: left;
   background: black;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 
 .shortrow .widecolumn {
-  height: 16px;
-  width: 87px;
+  height: 88%;
+  width: 7.673%;
   border: 1px solid white;
   list-style: none;
   padding: 0;
   display: inline-block;
-  float: left;
   border-radius: 8px;
 }
 
 .tallrow .narrowcolumn {
-  height: 87px;
-  width: 18px;
+  height: 100%;
+  width: 1.785%;
   border: 1px solid white;
   list-style: none;
   padding: 0;
   display: inline-block;
-  float: left;
-  border-radius: 8px;
+/*  float: left;
+*/  border-radius: 8px;
 }
 
 .tallrow .widecolumn {
-  height: 87px;
-  width: 87px;
+  height: 100%;
+  width: 7.673%;
   border: 1px solid white;
   list-style: none;
   padding: 0;
   display: inline-block;
-  float: left;
-  text-align: center;
+/*  float: left;
+*/  text-align: center;
   line-height: 87px;
   border-radius: 8px;
 }
@@ -87,61 +89,19 @@ ul {
   background-color: white;
 }
 
-@keyframes pulse {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
+@-webkit-keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  100% { background-color: #000; }
+}
+@keyframes fadeIt {
+  0%   { background-color: #FFFFFF; }
+  100% { background-color: #000; }
 }
 
-.pulse {
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-}
-
-@-webkit-keyframes rubberBand {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    -webkit-transform: scale3d(.95, 1.05, 1);
-    transform: scale3d(.95, 1.05, 1);
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, .95, 1);
-    transform: scale3d(1.05, .95, 1);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
+.backgroundAnimated{    
+    background-image:none !important;
+    -webkit-animation: fadeIt .3s ease-in 1; 
+            animation: fadeIt .3s ease-in 1;
+    -webkit-animation-fill-mode:forwards; 
+           animation-fill-mode:forwards;
+          };

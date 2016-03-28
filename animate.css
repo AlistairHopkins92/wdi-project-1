@@ -1217,20 +1217,24 @@
 
 @-webkit-keyframes fadeIn {
   from {
+    background-color: black;
     opacity: 0;
   }
 
   to {
+    background-color: black;
     opacity: 1;
   }
 }
 
 @keyframes fadeIn {
   from {
+    background-color: black;
     opacity: 0;
   }
 
   to {
+    background-color: black;
     opacity: 1;
   }
 }

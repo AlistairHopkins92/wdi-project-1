@@ -25,7 +25,10 @@ function fillLine(){
 
   $('ul .tallrow .narrowcolumn').one("click", function() {
 
-    $(this).css("background", "black");
+    // $(this).animate({backgroundColor: "#000"}, 'slow');
+    // $(this).css("background", "black").fadeIn();
+    // $(this).addClass("animated fadeIn");
+    $(this).addClass('backgroundAnimated');
 
 
 
@@ -36,7 +39,7 @@ function fillLine(){
     var boxVertSelid    = ($(this.id).selector);
 
     var newvalueId      = (boxes[boxVertSelid] += 1)
-    
+
     var totalScore1   = document.querySelector(".totalScore1");
     var totalScore2   = document.querySelector(".totalScore2");
 
@@ -138,7 +141,7 @@ function fillLine(){
 });
   $('ul .shortrow .widecolumn').one("click", function() {
 
-    $(this).css("background", "black");
+    $(this).addClass('backgroundAnimated');
 
     var boxHorSelval = ($(this).val());
 
