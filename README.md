@@ -13,19 +13,19 @@ The game starts with an empty grid with dots showing the corner positions of the
 
 ###The Project requirements:
 
--Display a game in the browser.
--The game should be playable by two players or consist of a series of levels if one player.
--The project should not use dedicated library for game making.
++ Display a game in the browser.
++ The game should be playable by two players or consist of a series of levels if one player.
++ The project should not use dedicated library for game making.
 
 
 ###Technologies:
 
 The box game is built with HTML/CSS and Javascript, it used the following librairies:
-jQuery
-soundJS
-animate.css
++ jQuery
++ soundJS
++ animate.css
 
 
 ###Credits:
--fill me in" sound effect taken from Craig David's No.1 debut single "fill me in".
-"TearingPaper" sound effect taken from (http://soundbible.com)
++ "fill me in" sound effect taken from Craig David's No.1 debut single "fill me in".
++ "TearingPaper" sound effect taken from (http://soundbible.com)
