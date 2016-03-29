@@ -33,11 +33,14 @@ function endGame(lineTracker){
     }
 }
 
+var sound = new Audio("sounds/TearingPaper2.mp3");
+
 function fillLine(){
 
   $('ul .tallrow .narrowcolumn').one("click", function() {
     lineTracker+=1;
     $(this).addClass('backgroundAnimated');
+    sound.play();
 
     var boxVertSelval   = ($(this).val());
     var newvalueVal     = (boxes[boxVertSelval] += 1)
@@ -155,6 +158,7 @@ function fillLine(){
   $('ul .shortrow .widecolumn').one("click", function() {
     lineTracker+=1;
     $(this).addClass('backgroundAnimated');
+    sound.play();
 
     var boxHorSelval    = ($(this).val());
     var newvalueVal     = (boxes[boxHorSelval] += 1)
