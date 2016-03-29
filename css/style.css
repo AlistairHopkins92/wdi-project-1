@@ -1,23 +1,17 @@
 header{
   font-size: 50px;
   text-align: center;
-  padding: 20px;
-  font-family: "daft";
+  padding: 10px;
+  font-family: 'Indie Flower', cursive;
+  text-decoration: underline;
 }
 h2{
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 span{
   padding:20px;
-}
-@font-face {
-  font-family: 'daft';
-  src: url('../fonts/Daft_Font.eot');
-  src: local('☺'), url('../fonts/Daft_Font.woff') format('woff'), url('../fonts/Daft_Font.ttf') format('truetype'), url('../fonts/Daft_Font.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
 
 
@@ -32,23 +26,23 @@ ul#main {
 
 .totalScore1{
   color:red;
-  margin: 30px;
-  font-family: "daft";
+  margin: 5px;
+  font-family: 'Indie Flower', cursive;
 }
 
 .totalScore2{
   color:blue;
-  margin: 30px;
-  font-family: "daft";
+  margin: 5px;
+  font-family: 'Indie Flower', cursive;
 }
 
 .turn{
   color: purple;
-  margin: 30px;
-  font-family: "daft";
-  font-size: 30px;
+  margin: 10px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 35px;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 ul > ul {
