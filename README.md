@@ -28,4 +28,4 @@ animate.css
 
 ###Credits:
 -fill me in" sound effect taken from Craig David's No.1 debut single "fill me in".
-"TearingPaper" sound effect taken from soundbible.com
+"TearingPaper" sound effect taken from (http://soundbible.com)
