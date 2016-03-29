@@ -108,6 +108,14 @@ ul > ul {
   line-height: 87px;
   border-radius: 5px;
 }
+li#clear{
+  font-size: 50px;
+  text-align: center;
+  padding: 50px;
+  font-family: 'Indie Flower', cursive;
+  list-style: none;
+  margin:10px;
+}
 
 
 

@@ -153,6 +153,10 @@ function fillLine(){
         moveCount+=1;
         whosGo.innerHTML      = (playerTurn(moveCount)+" \'s turn");
     }
+    $('li#clear').on("click", function() {
+        location.reload();
+        });
+
 });
   $('ul .shortrow .widecolumn').one("click", function() {
     lineTracker+=1;
@@ -269,5 +273,9 @@ function fillLine(){
         totalScore1.innerHTML = ("Player 1 Score : "+player1Score);
         totalScore2.innerHTML = ("Player 2 Score : "+player2Score);
     }
+    $('li#clear').on("click", function() {
+        location.reload();
+        });
+
 });
 }
