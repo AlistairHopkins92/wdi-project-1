@@ -33,7 +33,8 @@ function endGame(lineTracker){
     }
 }
 
-var sound = new Audio("sounds/TearingPaper2.mp3");
+var sound       = new Audio("sounds/TearingPaper2.mp3");
+var fillMeIn    = new Audio("sounds/fillmein3.mp3")
 
 function fillLine(){
 
@@ -49,7 +50,8 @@ function fillLine(){
     var totalScore1     = document.querySelector(".totalScore1");
     var totalScore2     = document.querySelector(".totalScore2");
     var whosGo          = document.querySelector(".turn")
-    
+    var fillMeIn        = new Audio("sounds/fillmein3.mp3")
+
     if((newvalueId=== 4)&&(newvalueVal=== 4)){
         
         if(playerTurn(moveCount) === "player1"){
@@ -66,6 +68,7 @@ function fillLine(){
 
             boxClicked2.css("backgroundColor", playerColour1);
             player1Score+=2
+            fillMeIn.play();
 
             totalScore1.innerHTML = ("Player 1 Score : "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score : "+player2Score);
@@ -85,7 +88,6 @@ function fillLine(){
 
             boxClicked2.css("backgroundColor", playerColour2);
             player2Score+=2;
-
             totalScore1.innerHTML = ("Player 1 Score : "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score : "+player2Score);
             whosGo.innerHTML      = (playerTurn(moveCount)+" \'s turn");
@@ -114,7 +116,6 @@ function fillLine(){
 
             boxClicked.css("backgroundColor", playerColour2);
             player2Score+=1
-
             totalScore1.innerHTML = ("Player 1 Score : "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score : "+player2Score);
             whosGo.innerHTML      = (playerTurn(moveCount)+" \'s turn");
@@ -130,7 +131,6 @@ function fillLine(){
 
             boxClicked.css("backgroundColor", playerColour1);
             player1Score+=1
-
             totalScore1.innerHTML = ("Player 1 Score : "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score : "+player2Score);
             whosGo.innerHTML      = (playerTurn(moveCount)+" \'s turn");
@@ -143,7 +143,6 @@ function fillLine(){
 
             boxClicked.css("backgroundColor", playerColour2);
             player2Score+=1;
-
             totalScore1.innerHTML = ("Player 1 Score : "+player1Score);
             totalScore2.innerHTML = ("Player 2 Score : "+player2Score);
             whosGo.innerHTML      = (playerTurn(moveCount)+" \'s turn");
@@ -167,6 +166,7 @@ function fillLine(){
     var totalScore1     = document.querySelector(".totalScore1");
     var totalScore2     = document.querySelector(".totalScore2");
     var whosGo          = document.querySelector(".turn")
+    var fillMeIn        = new Audio("sounds/fillmein3.mp3")
 
     if((newvalueId=== 4)&&(newvalueVal=== 4)){
         if(playerTurn(moveCount) === "player1"){
@@ -180,7 +180,7 @@ function fillLine(){
             var boxClicked2 = $('#box'+boxHorSelval)
 
             boxClicked2.css("backgroundColor", playerColour1);
-            
+            fillMeIn.play();
             player1Score+=2
 
             totalScore1.innerHTML = ("Player 1 Score : "+player1Score);
