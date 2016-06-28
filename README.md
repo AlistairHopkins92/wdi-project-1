@@ -3,7 +3,7 @@
 
 ### Introduction:
 
-The box game is a two player puzzle game from my childhood traditionally played with pen and paper. It was built as a first Javascript project during my Web Development Immersive at General Assembly London.
+The box game is a two player puzzle game from my childhood traditionally played with pen and paper. It was built as a first Javascript project during my time on the Web Development Immersive course at General Assembly London.
 
 
 ### How to play:
